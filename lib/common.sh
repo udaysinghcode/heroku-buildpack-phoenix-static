@@ -26,9 +26,13 @@ load_config() {
   info "Loading config..."
 
   local custom_config_file="${build_dir}/phoenix_static_buildpack.config"
+  
 
   # Source for default versions file from buildpack first
   source "${build_pack_dir}/phoenix_static_buildpack.config"
+  
+  ls "${build_pack_dir}"
+  info "Build pack is ${build_pack_dir}"
 
   if [ -f $custom_config_file ]; then
     source $custom_config_file
